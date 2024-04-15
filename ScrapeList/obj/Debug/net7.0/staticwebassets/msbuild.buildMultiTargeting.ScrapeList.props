@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ScrapeList.props" />
+</Project>

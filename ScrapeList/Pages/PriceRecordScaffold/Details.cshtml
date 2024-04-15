@@ -1,0 +1,37 @@
+﻿@page
+@model ScrapeList.Pages.PriceRecordScaffold.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PriceRecord</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceRecord.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceRecord.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceRecord.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceRecord.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceRecord.Material)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceRecord.Material.MaterialName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PriceRecord?.PriceRecordID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

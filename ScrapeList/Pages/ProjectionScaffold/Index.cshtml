@@ -1,0 +1,48 @@
+﻿@page
+@model ScrapeList.Pages.ProjectionScaffold.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Projection[0].ProjectedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projection[0].ProjectedPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projection[0].Material)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Projection) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectedPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material.MaterialName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProjectionID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProjectionID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProjectionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

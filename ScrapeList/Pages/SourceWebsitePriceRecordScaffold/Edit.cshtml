@@ -1,0 +1,50 @@
+﻿@page
+@model ScrapeList.Pages.SourceWebsitePriceRecordScaffold.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SourceWebsitePriceRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SourceWebsitePriceRecord.WebsiteID" />
+            <input type="hidden" asp-for="SourceWebsitePriceRecord.PriceRecordID" />
+
+            <!-- Example: Website Selection -->
+            <div class="form-group">
+                <label asp-for="SourceWebsitePriceRecord.WebsiteID" class="control-label"></label>
+                <select asp-for="SourceWebsitePriceRecord.WebsiteID" class="form-control" asp-items="ViewBag.WebsiteID"></select>
+                <span asp-validation-for="SourceWebsitePriceRecord.WebsiteID" class="text-danger"></span>
+            </div>
+
+            <!-- Example: Price Record Selection -->
+            <div class="form-group">
+                <label asp-for="SourceWebsitePriceRecord.PriceRecordID" class="control-label"></label>
+                <select asp-for="SourceWebsitePriceRecord.PriceRecordID" class="form-control" asp-items="ViewBag.PriceRecordID"></select>
+                <span asp-validation-for="SourceWebsitePriceRecord.PriceRecordID" class="text-danger"></span>
+            </div>
+
+            <!-- Add other form fields as needed -->
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

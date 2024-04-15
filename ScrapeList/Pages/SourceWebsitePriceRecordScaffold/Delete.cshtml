@@ -1,0 +1,35 @@
+﻿@page
+@model ScrapeList.Pages.SourceWebsitePriceRecordScaffold.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SourceWebsitePriceRecord</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SourceWebsitePriceRecord.SourceWebsite)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SourceWebsitePriceRecord.SourceWebsite.xPathPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SourceWebsitePriceRecord.PriceRecord)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SourceWebsitePriceRecord.PriceRecord.PriceRecordID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="SourceWebsitePriceRecord.WebsiteID" />
+        <input type="hidden" asp-for="SourceWebsitePriceRecord.PriceRecordID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
